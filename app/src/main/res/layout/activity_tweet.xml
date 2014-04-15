@@ -11,34 +11,37 @@
     tools:context="com.twitter.university.android.yamba.TweetActivity">
 
     <TextView
+        android:id="@+id/tweet_label"
         android:text="@string/tweet_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="48sp"
-        android:textStyle="bold"
-        android:textColor="@color/foreground"/>
+        style="@style/yambaText.label"/>
 
     <TextView
+            android:id="@+id/tweet_count"
             android:text="@string/tweet_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:textColor="@color/white"/>
+
 
     <EditText
+            android:id="@+id/tweet_tweet"
             android:hint="@string/tweet_hint"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:gravity="top|left"
             android:layout_height="0dp"
-            android:background="@color/fog"/>
+            style="@style/yambaText.edit"/>
 
     <Button
+            android:id="@+id/tweet_submit"
             android:text="@string/tweet_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textColor="@color/foreground"
-            android:textSize="36sp"/>
+            android:enabled="false"
+            style="@style/yambaText.button"/>
 
 </LinearLayout>
