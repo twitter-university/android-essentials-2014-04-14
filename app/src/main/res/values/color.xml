@@ -1,6 +1,9 @@
 <resources>
+    <color name="green">#22ff22</color>
+    <color name="yellow">#ffdd00</color>
+    <color name="red">#cc0000</color>
     <color name="foreground">#55acee</color>
-    <color name="fog">#aaaaaaaa</color>
     <color name="white">#ffffffff</color>
+    <color name="fog">#aaaaaaaa</color>
     <color name="black">#ff000000</color>
 </resources>
