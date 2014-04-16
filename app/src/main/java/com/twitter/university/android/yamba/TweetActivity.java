@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.twitter.university.android.yamba.service.YambaServiceHelper;
+
 
 public class TweetActivity extends Activity {
     private static final String TAG = "TWEET";
@@ -81,7 +83,7 @@ public class TweetActivity extends Activity {
         String tweet = tweetView.getText().toString();
         if (!checkTweetLen(tweet.length())) { return; }
 
-        YambaService.post(this, tweet);
+        YambaServiceHelper.post(this, tweet);
 
         tweetView.setText("");
     }
