@@ -1,9 +1,7 @@
 package com.twitter.university.android.yamba;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.res.Resources;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,43 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class TweetActivity extends Activity {
     private static final String TAG = "TWEET";
-
-    static class Poster extends AsyncTask<String, Void, Integer> {
-
-        private final Context ctxt;
-        public Poster(Context ctxt) { this.ctxt = ctxt; }
-
-        @Override
-        protected Integer doInBackground(String... tweet) {
-            int status = R.string.post_failed;
-            try {
-                Thread.sleep(1000 * 60 * 3);
-                status = R.string.post_succeeded;
-            }
-            catch (InterruptedException e) { }
-            return Integer.valueOf(status);
-        }
-
-        @Override
-        protected void onPostExecute(Integer status) {
-            Toast.makeText(ctxt, status.intValue(), Toast.LENGTH_LONG).show();
-            cleanUp();
-        }
-
-        @Override
-        protected void onCancelled() {
-            cleanUp();
-        }
-
-        private void cleanUp() { poster = null; }
-    }
-
-    static volatile Poster poster;
 
     private int okColor;
     private int warnColor;
@@ -113,13 +78,12 @@ public class TweetActivity extends Activity {
     }
 
     void post() {
-        if (null != poster) { return; }
-
         String tweet = tweetView.getText().toString();
         if (!checkTweetLen(tweet.length())) { return; }
 
-        poster = new Poster(getApplicationContext());
-        poster.execute(tweet);
+        YambaService.post(this, tweet);
+
+        tweetView.setText("");
     }
 
     private boolean checkTweetLen(int n) {
