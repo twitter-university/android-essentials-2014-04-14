@@ -9,7 +9,12 @@
 
     <item
             android:id="@+id/menu_timeline"
-            android:title="@string/title_timeline"
+            android:title="@string/timeline_label"
             android:showAsAction="withText|ifRoom"/>
+
+    <item
+            android:id="@+id/menu_about"
+            android:title="@string/about_label"
+            android:showAsAction="never"/>
 
 </menu>

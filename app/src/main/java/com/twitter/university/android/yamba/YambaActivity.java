@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 /**
  * Created by bmeike on 4/17/14.
@@ -25,6 +26,10 @@ public abstract class YambaActivity extends Activity {
 
             case R.id.menu_tweet:
                 nextPage(TweetActivity.class);
+                break;
+
+            case R.id.menu_about:
+                Toast.makeText(this, R.string.about, Toast.LENGTH_LONG).show();
                 break;
 
             default:
