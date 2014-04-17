@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +15,7 @@ import android.widget.TextView;
 import com.twitter.university.android.yamba.service.YambaServiceHelper;
 
 
-public class TweetActivity extends Activity {
+public class TweetActivity extends YambaActivity {
     private static final String TAG = "TWEET";
 
     private int okColor;

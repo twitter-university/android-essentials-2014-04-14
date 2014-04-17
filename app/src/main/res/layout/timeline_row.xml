@@ -9,15 +9,24 @@
     <TextView
             android:id="@+id/timeline_handle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            style="@style/yambaText.bold"/>
 
     <TextView
             android:id="@+id/timeline_timestamp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            style="@style/yambaText.italic"/>
 
     <TextView
             android:id="@+id/timeline_tweet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/timeline_handle"
+            style="@style/yambaText"/>
 </RelativeLayout>

@@ -9,6 +9,17 @@
           <item name="android:textColor">@color/foreground</item>
     </style>
 
+    <style name="yambaText.bold">
+        <item name="android:textColor">@color/foreground</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="yambaText.italic">
+        <item name="android:textColor">@color/foreground</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
     <style name="yambaText.label">
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:textSize">48sp</item>
