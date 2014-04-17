@@ -52,8 +52,6 @@ public class TimelineFragment
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //View v = inflater.inflate(R.layout.activity_tweet, container, false);
-        //v.findViewById(R.id.tweet_label);
         View v = super.onCreateView(inflater, container, savedInstanceState);
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(

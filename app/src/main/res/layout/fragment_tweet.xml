@@ -1,0 +1,40 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+    <TextView
+            android:id="@+id/tweet_label"
+            android:text="@string/tweet_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/yambaText.label"/>
+
+    <TextView
+            android:id="@+id/tweet_count"
+            android:text="@string/tweet_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textColor="@color/green"/>
+
+    <EditText
+            android:id="@+id/tweet_tweet"
+            android:hint="@string/tweet_hint"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            style="@style/yambaText.edit"/>
+
+    <Button
+            android:id="@+id/tweet_submit"
+            android:text="@string/tweet_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:enabled="false"
+            style="@style/yambaText.button"/>
+
+</LinearLayout>

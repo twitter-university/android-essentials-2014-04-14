@@ -1,18 +1,23 @@
 package com.twitter.university.android.yamba;
 
+import android.app.Fragment;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.twitter.university.android.yamba.service.YambaServiceHelper;
 
-
-public class TweetActivity extends YambaActivity {
+/**
+ * Created by bmeike on 4/17/14.
+ */
+public class TweetFragment extends Fragment {
     private static final String TAG = "TWEET";
 
     private int okColor;
@@ -28,9 +33,8 @@ public class TweetActivity extends YambaActivity {
     private Button submitButton;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tweet);
 
         Resources rez = getResources();
         okColor = rez.getColor(R.color.green);
@@ -39,16 +43,22 @@ public class TweetActivity extends YambaActivity {
         warnMax = rez.getInteger(R.integer.warn_limit);
         errColor = rez.getColor(R.color.red);
         errMax = rez.getInteger(R.integer.err_limit);
+    }
 
-        countView = (TextView) findViewById(R.id.tweet_count);
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_tweet, container, false);
+        v.findViewById(R.id.tweet_label);
 
-        submitButton = (Button) findViewById(R.id.tweet_submit);
+        countView = (TextView) v.findViewById(R.id.tweet_count);
+
+        submitButton = (Button) v.findViewById(R.id.tweet_submit);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vv) { post(); }
         });
 
-        tweetView = (EditText) findViewById(R.id.tweet_tweet);
+        tweetView = (EditText) v.findViewById(R.id.tweet_tweet);
         tweetView.addTextChangedListener(
             new TextWatcher() {
                 @Override
@@ -60,6 +70,8 @@ public class TweetActivity extends YambaActivity {
                 @Override
                 public void onTextChanged(CharSequence s, int b, int p, int n) { }
             });
+
+        return v;
     }
 
     void updateCount() {
@@ -82,7 +94,7 @@ public class TweetActivity extends YambaActivity {
         String tweet = tweetView.getText().toString();
         if (!checkTweetLen(tweet.length())) { return; }
 
-        YambaServiceHelper.post(this, tweet);
+        YambaServiceHelper.post(getActivity(), tweet);
 
         tweetView.setText("");
     }
