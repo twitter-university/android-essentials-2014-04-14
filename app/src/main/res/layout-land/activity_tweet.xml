@@ -32,7 +32,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/tweet_label"
                 android:text="@string/tweet_count"
-                android:textColor="@color/white"/>
+                android:textColor="@color/green"/>
 
         <Button
                 android:id="@+id/tweet_submit"

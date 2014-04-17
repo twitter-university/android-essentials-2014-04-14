@@ -8,5 +8,6 @@
     <string name="tweet_submit">Submit</string>
     <string name="post_succeeded">Tweet sent!</string>
     <string name="post_failed">Tweet not sent!</string>
+    <string name="title_timeline">Timeline</string>
 
 </resources>

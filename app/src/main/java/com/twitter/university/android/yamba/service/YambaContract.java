@@ -5,13 +5,13 @@ import android.net.Uri;
 import android.provider.BaseColumns;
 
 
-public class YambaContract {
+public final class YambaContract {
     private YambaContract() { }
 
     public static final int VERSION = 1;
 
     /** Yamba Service */
-    public static class Service {
+    public static final class Service {
         private Service() {}
 
         // Call to the Yamba Service
@@ -75,7 +75,7 @@ public class YambaContract {
     public static final String PERMISSION_WRITE
         = "com.twitter.university.android.yamba.timeline.permission.WRITE";
 
-    public static class Timeline {
+    public static final class Timeline {
         private Timeline() { }
 
         public static final String TABLE = "timeline";
@@ -97,7 +97,7 @@ public class YambaContract {
         }
     }
 
-    public static class MaxTimeline {
+    public static final class MaxTimeline {
         private MaxTimeline() { }
         public static final String TABLE = "maxTimeline";
 
